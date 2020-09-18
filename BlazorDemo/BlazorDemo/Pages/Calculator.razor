@@ -8,7 +8,7 @@
             <p>First Number</p>
         </div>
         <div class="col-md-4">
-            <input placeholder="Enter First Number" @bind="@num1" />
+            <input id="@ElementIds.Calculator.FirstNumberId" placeholder="Enter First Number" @bind="@num1" />
         </div>
     </div>
     <br />
@@ -17,7 +17,7 @@
             <p>Second Number</p>
         </div>
         <div class="col-md-4">
-            <input placeholder="Enter Second Number" @bind="@num2" />
+            <input id="@ElementIds.Calculator.SecondNumberId" placeholder="Enter Second Number" @bind="@num2" />
         </div>
     </div>
     <br />
@@ -26,22 +26,31 @@
             <p>Result</p>
         </div>
         <div class="col-md-4">
-            <input readonly @bind="@finalresult" />
+            <input id="@ElementIds.Calculator.FinalResultId" readonly @bind="@finalresult" />
         </div>
     </div>
     <br />
     <div class="row">
         <div class="col-md-2">
-            <button @onclick="AddNumbers" class="btn btn-light">Add (+)</button>
+            <button id="@ElementIds.Calculator.ButtonAddId" @onclick="AddNumbers" class="btn btn-light">Add (+)</button>
         </div>
         <div class="col-md-2">
-            <button @onclick="SubtractNumbers" class="btn btn-primary">Subtract (−)</button>
+            <button id="@ElementIds.Calculator.ButtonSubtractId" @onclick="SubtractNumbers" class="btn btn-primary">Subtract (−)</button>
         </div>
         <div class="col-md-2">
-            <button @onclick="MultiplyNumbers" class="btn btn-success ">Multiply (X)</button>
+            <button id="@ElementIds.Calculator.ButtonMultiplyId" @onclick="MultiplyNumbers" class="btn btn-success">Multiply (X)</button>
         </div>
         <div class="col-md-2">
-            <button @onclick="DivideNumbers" class="btn btn-info">Divide (/)</button>
+            <button id="@ElementIds.Calculator.ButtonDivideId" @onclick="DivideNumbers" class="btn btn-info">Divide (/)</button>
+        </div>
+        <div class="col-md-2">
+            <button id="@ElementIds.Calculator.ButtonRootId" @onclick="RootFirstNumber"> </button>
+        </div>
+        <div class="col-md-2">
+            <button id="@ElementIds.Calculator.ButtonPowerOfTwoId" @onclick="PowerOfTwoFirstNumber"></button>
+        </div>
+        <div class="col-md-2">
+            <button id="@ElementIds.Calculator.ButtonOfCubicRootId" @onclick="CubicRootFirstNumber"></button>    
         </div>
     </div>
 </div>
@@ -50,6 +59,16 @@
     string num1;
     string num2;
     string finalresult;
+    void PowerOfTwoFirstNumber() {
+        finalresult = Math.Pow(Convert.ToDouble(num1), 2).ToString();
+    }
+    void CubicRootFirstNumber() {
+        finalresult = Math.Cbrt(Convert.ToDouble(num1)).ToString();
+    }
+    void RootFirstNumber() 
+    {
+        finalresult = Math.Sqrt(Convert.ToDouble(num1)).ToString();
+    }
     void AddNumbers()
     {
         finalresult = (Convert.ToDouble(num1) + Convert.ToDouble(num2)).ToString();
