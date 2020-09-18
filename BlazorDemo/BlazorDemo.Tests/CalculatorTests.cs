@@ -39,7 +39,7 @@ namespace BlazorDemo.Tests
             button.Click(); 
             
             //Assert
-            _finalResultInput.MarkupMatches($"<input value=\"{expectedValue}\" readonly=\"\" id=\"input_finalResult\"></input>");
+            _finalResultInput.MarkupMatches($"<input value=\"{expectedValue}\" readonly=\"\" id=\"{ElementIds.Calculator.FinalResultId}\"></input>");
         }
     }
 }
