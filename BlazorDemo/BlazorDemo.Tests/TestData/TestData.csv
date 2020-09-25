@@ -1,0 +1,7 @@
+#button_multiply,2,3,6
+#button_add,2,2,4
+#button_divide,6,3,2
+#button_subtract,2,6,-4
+#button_root,4,,2
+#button_powerOfTwo,4,,16
+#button_cubicRoot,1000,,10
